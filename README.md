@@ -21,8 +21,8 @@ func main() {
 	wg := wgx.NewWaitGroup()
 
 	for i := 0; i < 10000; i ++ {
+		wg.Add(1)
 		go func(i int) {
-			wg.Add(1)
 			defer func() {
 				switch i % 4 {
 				case 0:
